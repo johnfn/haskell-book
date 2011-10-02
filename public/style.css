@@ -1,0 +1,66 @@
+h1 {
+  /* text-shadow: 1px 2px 2px rgba(0,0,0,0.2); */ 
+  font-size: 4.1em;
+  font-weight: normal;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: #940;
+}
+
+a:hover {
+  /*color: #fc3;*/
+  color: #c60;
+}
+
+a:visited {
+  color: #e91;
+}
+
+.tagline {
+  text-align: center;
+  margin-top: -30px;
+  margin-bottom: 60px;
+}
+
+.detail {
+  border-top: 1px solid #eee;
+  font-size: 100%;
+  margin-left: 20px;
+  padding-top: 5px;
+  color: #aaa;
+  width: 40%;
+}
+
+.title {
+  font-size: 2em;
+}
+
+ol {
+  margin-left: 60px;
+}
+
+li {
+  margin-bottom: 40px;
+  margin-left: 10px;
+  font-size 55px;
+}
+
+body {
+  font: 14px "Helvetica Neue", "Lucida Grande", "Arial";
+  font-size 14px;
+}
+
+footer {
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 100px;
+  color: #777;
+  font-size: .8em;
+}
