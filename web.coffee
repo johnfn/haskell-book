@@ -7,7 +7,14 @@ util = require 'util'
 
 DEFAULT_PORT = 3456
 BOOK_DIR = "chapters/"
-chapter_list = fs.readdirSync BOOK_DIR
+
+chapter_list = []
+
+for file in fs.readdirSync BOOK_DIR
+  if file.indexOf("chapter") != -1 and file.indexOf(".sw") == -1
+    chapter_list.push(file)
+
+chapter_list.sort()
 
 DEBUG = true
 
