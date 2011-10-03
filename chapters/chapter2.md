@@ -4,7 +4,7 @@
 
 ## Lists!
 
-myList = [1,2,3,4]
+    myList = [1,2,3,4]
 
 Lists are groups of values in order. Key facts about lists:
 
@@ -34,11 +34,11 @@ There are many more! Check them out at http://haskell.org/ghc/docs/latest/html/l
 Tuples are lists with
 
 * Fixed size
-* Different types ("a", 1) is a valid tuple. (If you wanted to sound smart, you can say that lists are <em>homogenous</em> and tuples are <em>heterogenous</em>.[1])
+* Different types `("a", 1)` is a valid tuple. (If you wanted to sound smart, you can say that lists are <em>homogenous</em> and tuples are <em>heterogenous</em>.[1])
 
+Two important Tuple functions:
 
     fst (1,2) == 1 -- (first)
-
     snd (1,2) == 2 -- (second)
 
 ## Functions!
@@ -69,7 +69,7 @@ This declares the function `add`, which takes two arguments, `x` and `y`, and re
 
 You can augment function definitions with lots of fun things. Haskell stresses *lots of simple functions* over big hairy scary messes, and gives you lots of ways to do this.
 
-#### Pattern Matching
+### Pattern Matching
 
 One way is called pattern matching, which is a way to check for argument values ahead of time.
 
@@ -87,9 +87,11 @@ Equivalent imperative code:
       }
     }
 
-When you call null, Haskell steps through the available functions from top to bottom. If you called with `[]`, it matches that pattern and returns `True` immediately. 
+When you call null, Haskell steps through the functions from top to bottom. If you called `null []`, it matches the first pattern and returns `True` immediately. 
 
 If you didn't, it hits the _ case. "_" means "match anything", so if the list isnt `[]` our null will return False.
+
+### Destructuring in pattern matching
 
 Destructuring lets you pull apart more complicated data structures.
 
@@ -105,7 +107,9 @@ Equiavlent imperative code:
 
 What's going on here is that we're passing in a tuple like (1,2) into fst/snd. Haskell allows us to say "This argument is a tuple, and I want to give names to its values" in the nice way that you see. Since we don't ever use the second value of the tuple, we just make it _.
 
-Destructuring lists:
+If you want to name the object you just destructured, use @. TODO.
+
+### List destructuring:
 
     length [] = 0
     length first:rest = 1 + length rest
@@ -116,22 +120,41 @@ The important part is first:rest, where you destructure the passed in list to `h
     trimLeadingWhitespace " ":rest = trimLeadingWhitespace rest
     trimLeadingWhitespace anything = anything
 
+### Guards:
+
 Guards are yet another way to break down functions into smaller parts.
+
+TODO: This is suboptimal since head str is pattern matchable...
 
     trimAllWhitespace "" = ""
     trimAllWhitespace str 
       | head str == " " = trimAllWhitespace (tail str)
       | last str == " " = trimAllWhitespace (last str)
+      | True = str
+
+Here, the guards are the `|` and the condition afterwards. If the condition is true, then Haskell will run the body.
+
+### Where:
+
+Where allows you to share some code among all pattern matches and guards of a function. 
+
+TODO: I think this function is too hard?
+
+    stripPunctuation word 
+      | startsWithPunct word           = stripPunctuation $ tail word
+      | startsWithPunct $ reverse word = stripPunctuation $ init word
+      | otherwise = word
+      where
+        startsWithPunct str = head str == "." || head str == "?"
+
+(Tip: `otherwise` is defined to be `True`. It makes writing guards nicer.)
+
+## Syntax
+
+### Let
 
 
 
-Where allows you 
-
+## Footnotes:
 
 [1]: Richard Feynman once said something along the lines of how there's no purpose to use complicated vocabulary when simple vocab will do. I agree.
-
-
-FOOTER:
-Footer? I barely know 'er!
-
-NOTWITTER:
