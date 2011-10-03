@@ -29,7 +29,7 @@ app.get '/', (request, response) ->
   response.render 'index', entries : chapter_list, ch : chapters
 
 app.get '/:id', (request, response) ->
-  response.send chapters[parseInt request.params['id']]
+  response.render 'chapter', content : chapters[parseInt request.params['id']]
 
 port = process.env.PORT || DEFAULT_PORT
 app.listen port, () ->
