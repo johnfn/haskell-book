@@ -16,7 +16,7 @@ html ->
             h2 -> a href:"/1", class: "chapter-title", -> "Chapter 2: Syntax"
             div class: "detail", -> "Reference chapter. All of Haskell's syntax in 5 seconds! Or maybe a little longer."
           li ->
-            h2 -> a href:"/1", class: "chapter-title", -> "Chapter 3: Tips, tricks, tools."
+            h2 -> a href:"/2", class: "chapter-title", -> "Chapter 3: Tips, tricks, tools."
             div class: "detail", -> "Reference chapter. Helpful tools to keep your code awesome."
 
       footer ->
