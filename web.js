@@ -32,7 +32,9 @@
     });
   });
   app.get('/:id', function(request, response) {
-    return response.send(chapters[parseInt(request.params['id'])]);
+    return response.render('chapter', {
+      content: chapters[parseInt(request.params['id'])]
+    });
   });
   port = process.env.PORT || DEFAULT_PORT;
   app.listen(port, function() {
