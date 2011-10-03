@@ -4,5 +4,6 @@
   "dependencies": 
   { "express": "2.4.6"
   , "showdown": "0.0.1"
+  , "coffeekup": "0.3.0"
   }
 }
