@@ -6,12 +6,6 @@ h1 {
   text-align: center;
 }
 
-div#content {
-  padding-left: 10%;
-  padding-right: 10%;
-  font-size 3em;
-}
-
 a {
   text-decoration: none;
 }
@@ -42,7 +36,7 @@ a:visited {
   width: 40%;
 }
 
-.title {
+.chapter-title {
   font-size: 1.5em;
 }
 
@@ -59,6 +53,9 @@ li {
 
 body {
   font-family: "Helvetica Neue", "Lucida Grande", "Arial";
+  padding-left: 10%;
+  padding-right: 10%;
+  font-size 3em;
 }
 
 h2 {

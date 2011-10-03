@@ -9,6 +9,8 @@ DEFAULT_PORT = 3456
 BOOK_DIR = "chapters/"
 chapter_list = fs.readdirSync BOOK_DIR
 
+DEBUG = true
+
 book_parse = (list) ->
   for file in list
     contents = fs.readFileSync BOOK_DIR + file, "UTF-8"
@@ -29,6 +31,9 @@ app.get '/', (request, response) ->
   response.render 'index', entries : chapter_list, ch : chapters
 
 app.get '/:id', (request, response) ->
+  if DEBUG
+    chapters = book_parse chapter_list
+
   response.render 'chapter', content : chapters[parseInt request.params['id']]
 
 port = process.env.PORT || DEFAULT_PORT

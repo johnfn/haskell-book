@@ -1,5 +1,5 @@
 (function() {
-  var BOOK_DIR, DEFAULT_PORT, app, book_parse, chapter_list, chapters, converter, express, fs, port, util;
+  var BOOK_DIR, DEBUG, DEFAULT_PORT, app, book_parse, chapter_list, chapters, converter, express, fs, port, util;
   express = require('express');
   fs = require('fs');
   converter = new (require('showdown')).Showdown.converter();
@@ -7,6 +7,7 @@
   DEFAULT_PORT = 3456;
   BOOK_DIR = "chapters/";
   chapter_list = fs.readdirSync(BOOK_DIR);
+  DEBUG = true;
   book_parse = function(list) {
     var contents, file, _i, _len, _results;
     _results = [];
@@ -32,6 +33,9 @@
     });
   });
   app.get('/:id', function(request, response) {
+    if (DEBUG) {
+      chapters = book_parse(chapter_list);
+    }
     return response.render('chapter', {
       content: chapters[parseInt(request.params['id'])]
     });
