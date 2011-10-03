@@ -8,6 +8,7 @@ html ->
     header ->
       h1 'Haskell for People'
       div class: "tagline", -> "Practical, simple, and simple."
+      div style: "color:red; text-align:center; padding-bottom:25px;", -> "This is a very very early release! Many things are out of order, wrong, or simply missing. Check back frequently for updates!"
       ol ->
           li ->
             h2 -> a href:"/0", class: "chapter-title", -> "Chapter 1: Prelude"
