@@ -32,6 +32,7 @@ a:visited {
 .detail {
   font-size: 100%;
   margin-left: 4px;
+  margin-bottom: 40px;
   color: #333;
   width: 40%;
 }
@@ -46,7 +47,6 @@ ol {
 }
 
 li {
-  margin-bottom: 40px;
   margin-left: 10px;
   font-size 55px;
 }
@@ -63,6 +63,12 @@ h2 {
   font-weight: normal;
   border-bottom: 1px solid #eee;
 }
+
+h3, h4 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: normal;
+}
+
 
 footer {
   text-align: center;
