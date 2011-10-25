@@ -27,7 +27,7 @@ It's important to keep in mind that ghci runs inside an implicit `do`. If you kn
     Prelude> :type myAdd
     myAdd :: (Num a) => a -> a -> a
 
-Yeah! Type inference for free! This is great for testing stuff out when Haskell is complaining about your types for some reason.
+Yeah! Types for free! Type inference FTW! This is great for testing stuff out when Haskell is complaining about your types for some reason.
 
 ## hoogle
 
